@@ -1,0 +1,19 @@
+{
+  "name": "小丑牌 Balatro 网页完整版",
+  "short_name": "小丑牌",
+  "description": "1:1 完整规则复刻网页版《小丑牌》，支持离线游玩与 iPhone 横屏全屏模式",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#0e1419",
+  "theme_color": "#0e1419",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
