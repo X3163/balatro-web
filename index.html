@@ -11223,9 +11223,9 @@ body.mobile-ui .tt-subbox { font-size: 12.5px; padding: 4px 8px; }
       runEl.classList.remove('hidden');
 
       // 标记当前局内阶段类名，驱动手机端专属三栏大牌网格自动切换
-      const stLower = String(run.state || 'playing').toLowerCase();
+      const stLower = String(this.run.state || 'playing').toLowerCase();
       runEl.className = `state-${stLower}`;
-      if (run.state === Balatro.STATES.PACK_OPEN && run.packState && run.packState.tempHand) {
+      if (this.run.state === Balatro.STATES.PACK_OPEN && this.run.packState && this.run.packState.tempHand) {
         runEl.classList.add('pack-has-hand');
       }
 
