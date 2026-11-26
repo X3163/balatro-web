@@ -1604,12 +1604,12 @@ body.mobile-ui .title-menu-bar .bal-btn {
   padding: 10px 14px;
 }
 
-/* 2. 局内主框架：左侧大字号紧凑仪表盘 (168px) + 右侧宽幅大牌桌 (1fr = 562px) */
+/* 2. 局内主框架：左侧紧凑大字仪表盘 (154px) + 右侧宽幅巨牌桌 (1fr = 550px) */
 body.mobile-ui #run-screen {
   max-width: none;
   padding: 4px 6px;
-  grid-template-columns: 168px 1fr;
-  gap: 8px;
+  grid-template-columns: 154px 1fr;
+  gap: 6px;
 }
 
 body.mobile-ui #hud-sidebar {
@@ -1735,21 +1735,21 @@ body.mobile-ui .hud-side-btns .bal-btn {
 }
 body.mobile-ui .hud-side-btns .bal-btn br { display: none; }
 
-/* 3. 右侧主牌桌：上方大卡槽 (92px) + 中央大牌舞台 + 右侧大拇指操作柱 (106px) */
+/* 3. 右侧主牌桌：上方紧凑大卡槽 (82px) + 中央巨型手牌舞台 (452px) + 右侧大拇指操作柱 (92px) */
 body.mobile-ui #main-stage {
   display: grid;
-  grid-template-columns: 1fr 106px;
-  grid-template-rows: 92px 1fr;
+  grid-template-columns: 1fr 92px;
+  grid-template-rows: 82px 1fr;
   gap: 6px;
 }
 
 body.mobile-ui #top-slots-row {
   grid-column: 1 / -1;
   grid-row: 1;
-  grid-template-columns: 1fr 164px;
+  grid-template-columns: 1fr 152px;
   gap: 6px;
-  min-height: 92px;
-  height: 92px;
+  min-height: 82px;
+  height: 82px;
 }
 body.mobile-ui .slot-tray {
   padding: 3px 8px 4px;
@@ -1776,45 +1776,45 @@ body.mobile-ui .slot-tray-hint {
 
 /* 顶部槽内小丑牌与消耗品：隐藏冗余英文小标头，把空间全部让给大图标与大号中文名！ */
 body.mobile-ui #top-slots-row .bal-card {
-  width: 64px;
-  height: 84px;
+  width: 60px;
+  height: 76px;
 }
 body.mobile-ui #top-slots-row .joker-top-label {
   display: none;
 }
 body.mobile-ui #top-slots-row .joker-art-frame {
-  font-size: 27px;
-  margin: 1px 0 3px;
+  font-size: 25px;
+  margin: 1px 0 2px;
 }
 body.mobile-ui #top-slots-row .joker-bot-name {
-  font-size: 12px;
-  padding: 2px 2px;
+  font-size: 11.5px;
+  padding: 1px 2px;
 }
 
-/* 4. 移动端超大号高辨识度扑克牌（86×124 + 25px 超粗大角标，一眼看清！） */
+/* 4. 移动端巨型高辨识度扑克牌（104×148 + 30px 超粗角标，占屏幕高度近一半！） */
 body.mobile-ui .pcard-corner.top-left {
-  top: 4px;
-  left: 5px;
+  top: 5px;
+  left: 6px;
 }
 body.mobile-ui .pcard-corner.bot-right {
-  bottom: 4px;
-  right: 5px;
+  bottom: 5px;
+  right: 6px;
 }
 body.mobile-ui .pcard-rank {
-  font-size: 25px;
+  font-size: 30px;
   font-weight: 900;
-  letter-spacing: -1px;
+  letter-spacing: -1.2px;
 }
 body.mobile-ui .pcard-suit-sm {
-  font-size: 18px;
+  font-size: 21px;
   margin-top: 1px;
 }
 body.mobile-ui .pcard-center {
-  inset: 22px 12px;
-  font-size: 42px;
+  inset: 26px 14px;
+  font-size: 50px;
 }
 body.mobile-ui .pcard-royal-box {
-  font-size: 28px;
+  font-size: 34px;
 }
 body.mobile-ui .joker-bot-name {
   font-size: 12.5px;
@@ -1830,26 +1830,28 @@ body.mobile-ui #run-screen.state-scoring .hand-fan-wrapper {
   display: contents;
 }
 
-/* 选牌时：中央大舞台整块展示 86×124 巨型扑克手牌，且远离底部边缘！ */
+/* 选牌时：中央大舞台整块展示 104×148 巨型扑克手牌，且远离底部边缘！ */
 body.mobile-ui #run-screen.state-playing #center-arena {
   display: none;
 }
 body.mobile-ui #hand-cards-row .bal-card {
-  width: 86px;
-  height: 124px;
-  border-width: 3px;
+  width: 104px;
+  height: 148px;
+  border-width: 3.5px;
+  border-radius: 11px;
 }
 body.mobile-ui #hand-cards-row .bal-card.is-selected {
-  transform: translateY(-22px) scale(1.05) !important;
+  transform: translateY(-26px) scale(1.06) !important;
+  z-index: 32 !important;
 }
 body.mobile-ui #run-screen.state-playing #hand-cards-row {
   grid-column: 1;
   grid-row: 2;
   align-self: center;
-  min-height: 162px;
-  padding: 24px 6px 14px;
+  min-height: 188px;
+  padding: 28px 6px 14px;
   background: rgba(12, 22, 20, 0.3);
-  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border: 1.5px solid rgba(255, 255, 255, 0.14);
   border-radius: 16px;
 }
 
@@ -10709,9 +10711,9 @@ body.mobile-ui .tt-subbox { font-size: 12.5px; padding: 4px 8px; }
   const DESKTOP_W = 1280;
   const DESKTOP_H = 690;
 
-  // 专为 iPhone 横屏定制的超大字体与大卡牌设计分辨率（在 iPhone 15/16 上缩放比约 1.04x，比之前大一倍以上！）
-  const MOBILE_W = 750;
-  const MOBILE_H = 342;
+  // 专为 iPhone 横屏定制的巨型卡牌与大字号设计分辨率（手牌占屏幕高度近 45%！）
+  const MOBILE_W = 720;
+  const MOBILE_H = 336;
 
   Balatro.viewportScale = 1;
   Balatro.viewportRotated = false;
@@ -10793,9 +10795,10 @@ body.mobile-ui .tt-subbox { font-size: 12.5px; padding: 4px 8px; }
     const safe = readSafeAreaInsets();
 
     const shortSide = Math.min(vw, vh);
-    const longSide = Math.max(vw, vh);
-    const isPhoneSized = shortSide <= 540 && longSide <= 1024;
-    const isPortraitPhone = vh > vw && vw < 760;
+    const uaMobile = /iPhone|iPod|Android.*Mobile|Mobile/i.test(navigator.userAgent || '');
+    // 兼容所有 iPhone（含开启“请求桌面网站”时 Safari 上报 980~1180px 宽度的情况）
+    const isPhoneSized = uaMobile || (Balatro.isTouchDevice && shortSide <= 680) || shortSide <= 560;
+    const isPortraitPhone = vh > vw && (uaMobile || vw < 760);
 
     Balatro.isMobileUI = isPhoneSized;
     document.body.classList.toggle('mobile-ui', isPhoneSized);
@@ -11860,14 +11863,14 @@ body.mobile-ui .tt-subbox { font-size: 12.5px; padding: 4px 8px; }
       const activeHand = run.getInteractiveHand();
       let overlap = -10;
       if (Balatro.isMobileUI) {
-        // 手机端中央牌区宽度约 446px，单张大牌宽 86px：智能计算重叠间距让每张牌的大号数字与花色完全露出
+        // 手机端中央牌区宽度约 446px，单张巨牌宽 104px：智能计算重叠间距让 8 张巨牌的 30px 大角标完整露出
         const count = Math.max(1, activeHand.length);
-        const maxRowW = 436;
-        const cardW = 86;
+        const maxRowW = 438;
+        const cardW = 104;
         if (count * cardW <= maxRowW) {
           overlap = 4;
         } else {
-          overlap = Math.max(-52, Math.floor((maxRowW - cardW) / (count - 1)) - cardW);
+          overlap = Math.max(-68, Math.floor((maxRowW - cardW) / (count - 1)) - cardW);
         }
       } else if (activeHand.length > 9) {
         overlap = Math.max(-38, -10 - (activeHand.length - 8) * 5);
