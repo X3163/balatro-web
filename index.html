@@ -10,7 +10,7 @@
   <meta name="theme-color" content="#0e1419" />
   <title>小丑牌 Balatro - 1:1 网页完整复刻版</title>
   <link rel="manifest" href="manifest.json" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTYgMjU2Ij4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U2Mzk0NiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjUyJSIgc3RvcC1jb2xvcj0iIzFlMjkzYiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDlkZmYiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIyNTYiIGhlaWdodD0iMjU2IiByeD0iNTQiIGZpbGw9InVybCgjYmcpIi8+CiAgPHJlY3QgeD0iMzgiIHk9IjI0IiB3aWR0aD0iMTgwIiBoZWlnaHQ9IjIwOCIgcng9IjIwIiBmaWxsPSIjZjhmYWZjIiBzdHJva2U9IiNmYWNjMTUiIHN0cm9rZS13aWR0aD0iOCIvPgogIDx0ZXh0IHg9IjU2IiB5PSI2NiIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXdlaWdodD0iOTAwIiBmb250LXNpemU9IjM0IiBmaWxsPSIjZTYzOTQ2Ij5BPC90ZXh0PgogIDxwYXRoIGQ9Ik0xMjggNzQgQzEwMiAxMDYgNzggMTI0IDc4IDE0OCBDNzggMTY1IDkyIDE3NiAxMDggMTc2IEMxMTcgMTc2IDEyMyAxNzEgMTI4IDE2NCBDMTMzIDE3MSAxMzkgMTc2IDE0OCAxNzYgQzE2NCAxNzYgMTc4IDE2NSAxNzggMTQ4IEMxNzggMTI0IDE1NCAxMDYgMTI4IDc0IFoiIGZpbGw9IiNlNjM5NDYiLz4KICA8cGF0aCBkPSJNMTIyIDE2MiBMMTEyIDE5NCBMMTQ0IDE5NCBMMTM0IDE2MiBaIiBmaWxsPSIjMWUyOTNiIi8+CiAgPGNpcmNsZSBjeD0iOTYiIGN5PSI5NiIgcj0iOCIgZmlsbD0iIzAwOWRmZiIvPgogIDxjaXJjbGUgY3g9IjE2MCIgY3k9Ijk2IiByPSI4IiBmaWxsPSIjZmFjYzE1Ii8+Cjwvc3ZnPgo=" />
+  <link rel="icon" type="image/svg+xml" href="icon.svg" />
   <style>
 :root {
   --bg-panel: #263138;
@@ -457,9 +457,9 @@ html, body {
 /* 顶部：小丑牌槽栏 + 消耗品槽栏 */
 #top-slots-row {
   display: grid;
-  grid-template-columns: 1fr 270px;
+  grid-template-columns: 1fr 290px;
   gap: 14px;
-  min-height: 148px;
+  min-height: 164px;
 }
 
 .slot-tray {
@@ -535,7 +535,7 @@ html, body {
   gap: 10px;
 }
 #hand-cards-row {
-  min-height: 138px;
+  min-height: 162px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -697,9 +697,9 @@ html, body {
 /* ==================== 卡牌通用容器与 3D 视差物理悬浮 ==================== */
 .bal-card {
   position: relative;
-  width: 88px;
-  height: 124px;
-  border-radius: 9px;
+  width: 102px;
+  height: 144px;
+  border-radius: 10px;
   background: #f8fafc;
   color: #0f172a;
   border: 3px solid #cbd5e1;
@@ -719,16 +719,17 @@ html, body {
 
 /* 手牌挤压重叠与选中上弹 */
 #hand-cards-row .bal-card {
-  margin-left: var(--hand-overlap, -10px);
+  width: 106px;
+  height: 150px;
+  margin-left: var(--hand-overlap, -8px);
 }
 #hand-cards-row .bal-card:first-child {
   margin-left: 0;
 }
 .bal-card.is-selected {
-  transform: translateY(-24px) scale(1.04) !important;
+  transform: translateY(-26px) scale(1.04) !important;
   border-color: #facc15;
   box-shadow: 0 0 0 2px #facc15, 0 16px 26px rgba(0,0,0,0.62);
-  z-index: 25;
 }
 .bal-card.is-dragging {
   z-index: 80 !important;
@@ -756,32 +757,32 @@ html, body {
   transform: rotate(180deg);
 }
 .pcard-rank {
-  font-size: 17px;
+  font-size: 21px;
   letter-spacing: -0.8px;
 }
 .pcard-suit-sm {
-  font-size: 13px;
+  font-size: 16px;
 }
 .pcard-center {
   position: absolute;
-  inset: 20px 15px;
+  inset: 22px 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 36px;
+  font-size: 44px;
   text-align: center;
 }
 .pcard-royal-box {
   width: 100%;
   height: 100%;
   border: 2px solid currentColor;
-  border-radius: 5px;
+  border-radius: 6px;
   background: rgba(0,0,0,0.04);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 900;
 }
 .pcard-bonus-chip-tag {
@@ -992,18 +993,18 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
+  font-size: 38px;
   background: rgba(255, 255, 255, 0.12);
   box-shadow: inset 0 2px 8px rgba(0,0,0,0.35);
 }
 .joker-bot-name {
-  font-size: 11px;
+  font-size: 12.5px;
   font-weight: 900;
   text-align: center;
   color: #fff;
   background: rgba(15, 23, 42, 0.78);
   border-radius: 4px;
-  padding: 2px 3px;
+  padding: 2px 4px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1089,6 +1090,22 @@ html, body {
 }
 #card-tooltip.visible {
   display: block;
+}
+#card-tooltip.has-actions {
+  pointer-events: auto;
+}
+.tt-actions-row {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 6px;
+}
+.tt-actions-row .mini-act-btn {
+  flex: 1;
+  padding: 5px 10px;
+  font-size: 13px;
+  border-radius: 7px;
+  white-space: nowrap;
 }
 .tt-title {
   font-size: 16px;
@@ -1802,30 +1819,30 @@ body.mobile-ui #top-slots-row .joker-bot-name {
   padding: 1px 2px;
 }
 
-/* 4. 移动端巨型高辨识度扑克牌（104×148 + 30px 超粗角标，占屏幕高度近一半！） */
+/* 4. 移动端方案 B 中号高辨识度扑克牌（86×122 + 24px 粗体角标，舒展不拥挤！） */
 body.mobile-ui .pcard-corner.top-left {
-  top: 5px;
-  left: 6px;
+  top: 4px;
+  left: 5px;
 }
 body.mobile-ui .pcard-corner.bot-right {
-  bottom: 5px;
-  right: 6px;
+  bottom: 4px;
+  right: 5px;
 }
 body.mobile-ui .pcard-rank {
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 900;
-  letter-spacing: -1.2px;
+  letter-spacing: -1px;
 }
 body.mobile-ui .pcard-suit-sm {
-  font-size: 21px;
+  font-size: 17px;
   margin-top: 1px;
 }
 body.mobile-ui .pcard-center {
-  inset: 26px 14px;
-  font-size: 50px;
+  inset: 22px 12px;
+  font-size: 40px;
 }
 body.mobile-ui .pcard-royal-box {
-  font-size: 34px;
+  font-size: 28px;
 }
 body.mobile-ui .joker-bot-name {
   font-size: 12.5px;
@@ -1841,26 +1858,26 @@ body.mobile-ui #run-screen.state-scoring .hand-fan-wrapper {
   display: contents;
 }
 
-/* 选牌时：中央大舞台整块展示 104×148 巨型扑克手牌，且远离底部边缘！ */
+/* 选牌时：中央大舞台展示 86×122 中号手牌，选中向上弹起不遮挡右侧牌角标 */
 body.mobile-ui #run-screen.state-playing #center-arena {
   display: none;
 }
 body.mobile-ui #hand-cards-row .bal-card {
-  width: 104px;
-  height: 148px;
-  border-width: 3.5px;
-  border-radius: 11px;
+  width: 86px;
+  height: 122px;
+  border-width: 3px;
+  border-radius: 10px;
 }
 body.mobile-ui #hand-cards-row .bal-card.is-selected {
-  transform: translateY(-26px) scale(1.06) !important;
-  z-index: 32 !important;
+  transform: translateY(-22px) scale(1.03) !important;
+  z-index: auto !important;
 }
 body.mobile-ui #run-screen.state-playing #hand-cards-row {
   grid-column: 1;
   grid-row: 2;
   align-self: center;
-  min-height: 188px;
-  padding: 28px 6px 14px;
+  min-height: 162px;
+  padding: 24px 8px 14px;
   background: rgba(12, 22, 20, 0.3);
   border: 1.5px solid rgba(255, 255, 255, 0.14);
   border-radius: 16px;
@@ -1972,10 +1989,24 @@ body.mobile-ui #run-screen:not(.state-playing):not(.state-scoring) #center-arena
 }
 body.mobile-ui #bottom-hand-zone.compact-bottom #deck-pile-widget {
   position: fixed;
-  right: 8px;
-  bottom: 10px;
-  width: 72px;
-  height: 62px;
+  right: 10px;
+  top: 7px;
+  bottom: auto;
+  width: auto;
+  height: auto;
+  margin: 0;
+  z-index: 40;
+}
+body.mobile-ui #bottom-hand-zone.compact-bottom .deck-stack-visual {
+  display: none;
+}
+body.mobile-ui #bottom-hand-zone.compact-bottom .deck-count-pill {
+  margin: 0;
+  padding: 2px 8px;
+  font-size: 11px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1.5px solid #facc15;
+  color: #fef08a;
 }
 
 /* 手机选盲注三栏面板：大字号大按钮 */
@@ -2041,8 +2072,8 @@ body.mobile-ui .shop-shelf-box {
   grid-column: 2;
   grid-row: 1;
   min-height: 0;
-  padding: 12px 8px 4px;
-  gap: 10px;
+  padding: 14px 8px 4px;
+  gap: 14px;
 }
 body.mobile-ui .shop-bottom-row {
   grid-column: 2;
@@ -2052,30 +2083,29 @@ body.mobile-ui .shop-bottom-row {
 }
 body.mobile-ui .shop-sub-box {
   min-height: 0;
-  padding: 12px 6px 4px;
-  gap: 10px;
+  padding: 14px 6px 4px;
+  gap: 12px;
 }
 body.mobile-ui .shop-sub-label {
-  font-size: 11.5px;
-  color: #cbd5e1;
-  top: 2px;
-  bottom: auto;
-  left: 8px;
+  display: none;
 }
 body.mobile-ui .shop-cabinet .bal-card {
-  width: 68px;
-  height: 92px;
+  width: 76px;
+  height: 94px;
 }
 body.mobile-ui .shop-cabinet .joker-top-label { display: none; }
 body.mobile-ui .shop-cabinet .joker-art-frame { font-size: 26px; margin: 2px 0; }
 body.mobile-ui .shop-cabinet .joker-bot-name { font-size: 12px; }
 body.mobile-ui .shop-price-tag {
   top: -11px;
-  font-size: 13px;
+  font-size: 12px;
   padding: 1px 7px;
 }
 
 /* 手机端卡牌操作浮钮：大号清晰，居中悬浮不溢出底边 */
+body.mobile-ui .shop-cabinet .card-action-pills {
+  display: none !important;
+}
 body.mobile-ui .card-action-pills {
   bottom: 4px;
   gap: 4px;
@@ -2184,13 +2214,16 @@ body.mobile-ui .deck-matrix-cell {
 }
 
 body.mobile-ui #card-tooltip {
-  max-width: 260px;
-  padding: 9px 11px;
+  max-width: 192px;
+  padding: 5px 8px;
+  border-width: 2px;
+  border-radius: 9px;
 }
-body.mobile-ui .tt-title { font-size: 16px; margin-bottom: 5px; }
-body.mobile-ui .tt-desc-box { font-size: 14px; line-height: 1.45; padding: 7px 9px; }
-body.mobile-ui .tt-pill { font-size: 12.5px; padding: 2px 9px; }
-body.mobile-ui .tt-subbox { font-size: 12.5px; padding: 4px 8px; }
+body.mobile-ui .tt-title { font-size: 13px; margin-bottom: 3px; }
+body.mobile-ui .tt-desc-box { font-size: 11.5px; line-height: 1.35; padding: 4px 6px; border-radius: 6px; }
+body.mobile-ui .tt-badges-row { margin-top: 4px; gap: 4px; }
+body.mobile-ui .tt-pill { font-size: 10.5px; padding: 1px 6px; }
+body.mobile-ui .tt-subbox { font-size: 10.5px; padding: 3px 6px; margin-top: 3px; }
 
 @keyframes rotatePhoneHint {
   0%, 20% { transform: rotate(0deg); }
@@ -3266,17 +3299,19 @@ body.mobile-ui .tt-subbox { font-size: 12.5px; padding: 4px 8px; }
     updateAndRender(dt, rootAppEl) {
       this.time += dt;
 
-      // 1. 屏幕震动位移应用
+      // 1. 屏幕震动位移应用（使用独立 CSS translate 属性，绝不覆盖 mobile_pwa.js 的 transform scale/rotate！）
       if (rootAppEl) {
         if (this.shakeTime > 0) {
           this.shakeTime -= dt;
           const cur = this.shakeMag * Math.max(0, this.shakeTime / 0.22);
           const ox = (Math.random() - 0.5) * 2 * cur;
           const oy = (Math.random() - 0.5) * 2 * cur;
-          rootAppEl.style.transform = `translate3d(${ox.toFixed(1)}px, ${oy.toFixed(1)}px, 0)`;
-        } else if (rootAppEl.style.transform) {
+          rootAppEl.style.translate = `${ox.toFixed(1)}px ${oy.toFixed(1)}px`;
+          this._isShaking = true;
+        } else if (this._isShaking) {
           this.shakeMag = 0;
-          rootAppEl.style.transform = '';
+          this._isShaking = false;
+          rootAppEl.style.translate = '';
         }
       }
 
@@ -9920,16 +9955,16 @@ body.mobile-ui .tt-subbox { font-size: 12.5px; padding: 4px 8px; }
     el._getTooltipInfo = () => (typeof dataOrFn === 'function' ? dataOrFn() : dataOrFn);
 
     el.addEventListener('pointerenter', (e) => {
-      if (e.pointerType === 'touch') return;
+      if (e.pointerType === 'touch' || (Balatro.isMobileUI && (el.closest('#hand-cards-row') || el.closest('.shop-cabinet')))) return;
       Balatro.audio.play('cardFocus', 0.96 + Math.random() * 0.08);
       Balatro.showTooltip(el._getTooltipInfo(), e.clientX, e.clientY);
     });
     el.addEventListener('pointermove', (e) => {
-      if (e.pointerType === 'touch') return;
+      if (e.pointerType === 'touch' || (Balatro.isMobileUI && (el.closest('#hand-cards-row') || el.closest('.shop-cabinet')))) return;
       Balatro.moveTooltip(e.clientX, e.clientY);
     });
     el.addEventListener('pointerleave', (e) => {
-      if (e.pointerType === 'touch') return;
+      if (e.pointerType === 'touch' || (Balatro.isMobileUI && (el.closest('#hand-cards-row') || el.closest('.shop-cabinet')))) return;
       Balatro.hideTooltip();
     });
 
@@ -9942,15 +9977,15 @@ body.mobile-ui .tt-subbox { font-size: 12.5px; padding: 4px 8px; }
     });
   }
 
-  Balatro.inspectCardOnTouch = function inspectCardOnTouch(el) {
+  Balatro.inspectCardOnTouch = function inspectCardOnTouch(el, placement, actions) {
     if (!el || !el._getTooltipInfo) return;
     const r = el.getBoundingClientRect();
     const info = el._getTooltipInfo();
     if (!info) return;
-    Balatro.showTooltip(info, r.right, r.top + r.height * 0.45, r);
+    Balatro.showTooltip(info, r.right, r.top + r.height * 0.45, r, placement || 'side', actions);
   };
 
-  Balatro.showTooltip = function showTooltip(info, x, y, cardRect) {
+  Balatro.showTooltip = function showTooltip(info, x, y, cardRect, placement, actions) {
     const box = document.getElementById('card-tooltip');
     if (!box || !info) return;
     const pillsHtml = (info.pills || [])
@@ -9966,31 +10001,73 @@ body.mobile-ui .tt-subbox { font-size: 12.5px; padding: 4px 8px; }
       ${pillsHtml ? `<div class="tt-badges-row">${pillsHtml}</div>` : ''}
       ${subsHtml}
     `;
+
+    if (actions && actions.length > 0) {
+      const actRow = document.createElement('div');
+      actRow.className = 'tt-actions-row';
+      actions.forEach((act) => {
+        const btn = document.createElement('button');
+        btn.className = `mini-act-btn ${act.className || 'btn-orange'}`;
+        btn.textContent = act.label;
+        btn.onclick = (e) => {
+          e.stopPropagation();
+          Balatro.hideTooltip();
+          if (act.onClick) act.onClick();
+        };
+        actRow.appendChild(btn);
+      });
+      box.appendChild(actRow);
+      box.classList.add('has-actions');
+    } else {
+      box.classList.remove('has-actions');
+    }
+
     box.style.transform = Balatro.viewportRotated ? 'rotate(90deg)' : '';
     box.classList.add('visible');
-    Balatro.moveTooltip(x, y, cardRect);
+    Balatro.moveTooltip(x, y, cardRect, placement);
   };
 
-  Balatro.moveTooltip = function moveTooltip(x, y, cardRect) {
+  Balatro.moveTooltip = function moveTooltip(x, y, cardRect, placement) {
     const box = document.getElementById('card-tooltip');
     if (!box || !box.classList.contains('visible')) return;
-    const pad = 12;
-    const bw = box.offsetWidth || 230;
-    const bh = box.offsetHeight || 120;
-    let lx = cardRect ? cardRect.right + 10 : x + 18;
-    let ly = y - bh * 0.5;
-    if (lx + bw + pad > global.innerWidth) {
-      lx = cardRect ? Math.max(pad, cardRect.left - bw - 10) : Math.max(pad, x - bw - 18);
+    const pad = 10;
+    const bw = box.offsetWidth || 210;
+    const bh = box.offsetHeight || 100;
+    let lx, ly;
+
+    if (placement === 'below' && cardRect) {
+      // 手机端选中手牌时：精致气泡居中贴于选中牌正下方，不遮挡上方小丑栏与左右手牌
+      lx = cardRect.left + cardRect.width * 0.5 - bw * 0.5;
+      ly = cardRect.bottom + 8;
+      if (lx < pad) lx = pad;
+      if (lx + bw + pad > global.innerWidth) lx = global.innerWidth - bw - pad;
+      if (ly + bh + 6 > global.innerHeight) ly = global.innerHeight - bh - 6;
+    } else if (placement === 'above' && cardRect) {
+      lx = cardRect.left + cardRect.width * 0.5 - bw * 0.5;
+      ly = cardRect.top - bh - 10;
+      if (lx < pad) lx = pad;
+      if (lx + bw + pad > global.innerWidth) lx = global.innerWidth - bw - pad;
+      if (ly < pad) ly = pad;
+    } else {
+      lx = cardRect ? cardRect.right + 10 : x + 18;
+      ly = y - bh * 0.5;
+      if (lx + bw + pad > global.innerWidth) {
+        lx = cardRect ? Math.max(pad, cardRect.left - bw - 10) : Math.max(pad, x - bw - 18);
+      }
+      if (ly < pad) ly = pad;
+      if (ly + bh + pad > global.innerHeight) ly = Math.max(pad, global.innerHeight - bh - pad);
     }
-    if (ly < pad) ly = pad;
-    if (ly + bh + pad > global.innerHeight) ly = Math.max(pad, global.innerHeight - bh - pad);
+
     box.style.left = `${Math.round(lx)}px`;
     box.style.top = `${Math.round(ly)}px`;
   };
 
   Balatro.hideTooltip = function hideTooltip() {
     const box = document.getElementById('card-tooltip');
-    if (box) box.classList.remove('visible');
+    if (box) {
+      box.classList.remove('visible');
+      box.classList.remove('has-actions');
+    }
   };
 })(window);
 
@@ -10872,12 +10949,12 @@ body.mobile-ui .tt-subbox { font-size: 12.5px; padding: 4px 8px; }
       modalBackdrop.style.transform = '';
     }
 
-    // 情况 B：iPhone 横屏（强制在底部留出至少 24px 的 iOS Home 横条隔离带，并将画面靠上对齐！）
+    // 情况 B：iPhone 横屏（底部留出防苹果 Home 横条隔离带，按视口比例完整铺满全屏！）
     if (isPhoneSized) {
       const padLeft = Math.max(10, safe.left + 4);
       const padRight = Math.max(10, safe.right + 4);
       const padTop = Math.max(4, safe.top);
-      const padBottom = Math.max(24, safe.bottom + 12); // 核心防误触隔离带：绝不贴近苹果底部上划条！
+      const padBottom = Math.max(24, Math.round(vh * 0.065), safe.bottom + 12);
 
       const availW = Math.max(320, vw - padLeft - padRight);
       const availH = Math.max(220, vh - padTop - padBottom);
@@ -10887,8 +10964,7 @@ body.mobile-ui .tt-subbox { font-size: 12.5px; padding: 4px 8px; }
       const scaledW = MOBILE_W * scale;
       const scaledH = MOBILE_H * scale;
       const leftPx = padLeft + (availW - scaledW) * 0.5;
-      // 靠上对齐（仅留微距），把多余垂直裕量全部让给底部防误触区！
-      const topPx = padTop + Math.min(6, (availH - scaledH) * 0.25);
+      const topPx = padTop + Math.min(8, (availH - scaledH) * 0.25);
 
       appRoot.style.position = 'fixed';
       appRoot.style.width = `${MOBILE_W}px`;
@@ -11103,7 +11179,7 @@ body.mobile-ui .tt-subbox { font-size: 12.5px; padding: 4px 8px; }
         if (!e.target.closest('.bal-card') && !e.target.closest('#card-tooltip')) {
           this.activeCardMenuUid = null;
           document.querySelectorAll('.bal-card.active-actions').forEach((el) => el.classList.remove('active-actions'));
-          if (Balatro.lastPointerType === 'touch') Balatro.hideTooltip();
+          if (Balatro.lastPointerType === 'touch' || Balatro.isMobileUI) Balatro.hideTooltip();
         }
       });
     }
@@ -11671,37 +11747,9 @@ body.mobile-ui .tt-subbox { font-size: 12.5px; padding: 4px 8px; }
           el.appendChild(tag);
 
           const isCons = it.kind === 'Tarot' || it.kind === 'Planet' || it.kind === 'Spectral';
-          const pills = document.createElement('div');
-          pills.className = 'card-action-pills hover-show';
-          pills.innerHTML = `
-            <button class="mini-act-btn btn-orange" data-buy="hold">${category === 'pack' ? '拆开' : (category === 'voucher' ? '兑换' : '购买')}</button>
-            ${isCons && Balatro.canUseConsumable(run, it).ok ? '<button class="mini-act-btn btn-red" data-buy="use">买并使用</button>' : ''}
-          `;
-
-          pills.querySelectorAll('button').forEach((btn) => {
-            btn.onclick = (e) => {
-              e.stopPropagation();
-              const res = run.buyShopEntry(category, it.uid, btn.dataset.buy === 'use');
-              if (res.ok) {
-                Balatro.audio.play(res.sfx || 'coin');
-                this.toast(res.msg);
-                this.renderAll();
-              } else {
-                Balatro.audio.play('nope');
-                this.toast(res.msg);
-              }
-            };
-          });
-          el.appendChild(pills);
-          el.onclick = () => {
-            if (Balatro.lastPointerType === 'touch' && !el.classList.contains('active-actions')) {
-              document.querySelectorAll('.bal-card.active-actions').forEach((n) => n.classList.remove('active-actions'));
-              el.classList.add('active-actions');
-              Balatro.audio.play('cardFocus');
-              Balatro.inspectCardOnTouch(el);
-              return;
-            }
-            const res = run.buyShopEntry(category, it.uid, false);
+          const primaryLabel = category === 'pack' ? '拆开' : (category === 'voucher' ? '兑换' : '购买');
+          const doBuy = (useNow) => {
+            const res = run.buyShopEntry(category, it.uid, useNow);
             if (res.ok) {
               Balatro.audio.play(res.sfx || 'coin');
               this.toast(res.msg);
@@ -11710,6 +11758,51 @@ body.mobile-ui .tt-subbox { font-size: 12.5px; padding: 4px 8px; }
               Balatro.audio.play('nope');
               this.toast(res.msg);
             }
+          };
+
+          const pills = document.createElement('div');
+          pills.className = 'card-action-pills hover-show';
+          pills.innerHTML = `
+            <button class="mini-act-btn btn-orange" data-buy="hold">${primaryLabel}</button>
+            ${isCons && Balatro.canUseConsumable(run, it).ok ? '<button class="mini-act-btn btn-red" data-buy="use">买并使用</button>' : ''}
+          `;
+
+          pills.querySelectorAll('button').forEach((btn) => {
+            btn.onclick = (e) => {
+              e.stopPropagation();
+              doBuy(btn.dataset.buy === 'use');
+            };
+          });
+          el.appendChild(pills);
+
+          const mobileActions = [
+            { label: primaryLabel, className: 'btn-orange', onClick: () => doBuy(false) }
+          ];
+          if (isCons && Balatro.canUseConsumable(run, it).ok) {
+            mobileActions.push({ label: '买并使用', className: 'btn-red', onClick: () => doBuy(true) });
+          }
+
+          el.onclick = () => {
+            if (Balatro.isMobileUI) {
+              if (el.classList.contains('active-actions')) {
+                el.classList.remove('active-actions');
+                Balatro.hideTooltip();
+                return;
+              }
+              document.querySelectorAll('.bal-card.active-actions').forEach((n) => n.classList.remove('active-actions'));
+              el.classList.add('active-actions');
+              Balatro.audio.play('cardFocus');
+              Balatro.inspectCardOnTouch(el, 'side', mobileActions);
+              return;
+            }
+            if (Balatro.lastPointerType === 'touch' && !el.classList.contains('active-actions')) {
+              document.querySelectorAll('.bal-card.active-actions').forEach((n) => n.classList.remove('active-actions'));
+              el.classList.add('active-actions');
+              Balatro.audio.play('cardFocus');
+              Balatro.inspectCardOnTouch(el);
+              return;
+            }
+            doBuy(false);
           };
           container.appendChild(el);
         });
@@ -11874,14 +11967,14 @@ body.mobile-ui .tt-subbox { font-size: 12.5px; padding: 4px 8px; }
       const activeHand = run.getInteractiveHand();
       let overlap = -10;
       if (Balatro.isMobileUI) {
-        // 手机端中央牌区宽度约 446px，单张巨牌宽 104px：智能计算重叠间距让 8 张巨牌的 30px 大角标完整露出
+        // 手机端方案 B：中央牌区宽约 446px，单张中号牌宽 86px，8张牌舒展清晰不拥挤
         const count = Math.max(1, activeHand.length);
         const maxRowW = 438;
-        const cardW = 104;
+        const cardW = 86;
         if (count * cardW <= maxRowW) {
           overlap = 4;
         } else {
-          overlap = Math.max(-68, Math.floor((maxRowW - cardW) / (count - 1)) - cardW);
+          overlap = Math.max(-52, Math.floor((maxRowW - cardW) / (count - 1)) - cardW);
         }
       } else if (activeHand.length > 9) {
         overlap = Math.max(-38, -10 - (activeHand.length - 8) * 5);
@@ -11907,7 +12000,8 @@ body.mobile-ui .tt-subbox { font-size: 12.5px; padding: 4px 8px; }
               this.toast('蔚蓝铃铛强制锁定了这张牌！');
               return;
             }
-            if (!card.selected) {
+            const wasSelected = card.selected;
+            if (!wasSelected) {
               const curSel = activeHand.filter((c) => c.selected).length;
               if (curSel >= 5) {
                 Balatro.audio.play('nope');
@@ -11922,6 +12016,16 @@ body.mobile-ui .tt-subbox { font-size: 12.5px; padding: 4px 8px; }
             this.renderHandZone();
             this.renderTopTrays();
             this.updateHandPreviewHUD();
+
+            // 手机端 / 触屏选中手牌时，在牌正下方自动弹出精致紧凑详情气泡（计分基础、增强、版本、蜡封）
+            if (Balatro.isMobileUI || Balatro.lastPointerType === 'touch') {
+              if (card.selected) {
+                const freshEl = handRow.querySelector(`.bal-card[data-uid="${card.uid}"]`);
+                if (freshEl) Balatro.inspectCardOnTouch(freshEl, 'below');
+              } else {
+                Balatro.hideTooltip();
+              }
+            }
           }
         });
       }
